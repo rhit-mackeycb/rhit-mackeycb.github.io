@@ -8,12 +8,15 @@ body {
     line-height: 1.5;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     line-height: 1.2;
 }
 
-body#about img { height: 15em; }
-body#portfolio img { height: 25em; }
+body#about img {
+    height: 15em;
+}
 
 p {
     max-width: 50em;
@@ -22,9 +25,9 @@ p {
 body {
     display: grid;
     grid-template-areas: "head head"
-                         "nav  nav"
-                         "main main"
-                         "foot foot";
+        "nav  nav"
+        "main main"
+        "foot foot";
     grid-template-columns: 1fr 4fr;
     grid-template-rows: auto auto 1fr auto;
 }
@@ -32,46 +35,49 @@ body {
 @media screen and (min-width: 23em) {
     body {
         grid-template-areas: "head head"
-                             "nav  main"
-                             "foot foot";
+            "nav  main"
+            "foot foot";
         grid-template-rows: auto 1fr auto;
     }
 }
 
-body > * {
+body>* {
     padding-left: var(--horizontal-space);
 }
 
-body > header {
+body>header {
     grid-area: head;
 }
 
-body > nav {
+body>nav {
     grid-area: nav;
 }
 
-body > nav ul {
+body>nav ul {
     list-style-type: none;
     padding: 0;
 }
+
 /* body > nav ul li {
     display: inline;
     padding-right: 1rem;
 } */
-body > main {
+body>main {
     grid-area: main;
 }
 
-body > footer {
+body>footer {
     grid-area: foot;
 }
 
-header, footer {
+header,
+footer {
     padding-top: var(--vertical-space);
     padding-bottom: var(--vertical-space);
 }
 
-header h1, footer h1 {
+header h1,
+footer h1 {
     margin: 0;
 }
 
@@ -83,7 +89,13 @@ body#portfolio ul#portfolioItems {
     padding: 0;
 }
 
-body#portfolio ul#portfolioItems li {
-    flex-basis: 48%;
-    padding-right: 2%;
+@media screen and (min-width: 25em) {
+    body#portfolio ul#portfolioItems li {
+        flex-basis: 48%;
+        padding-right: 2%;
+    }
+}
+
+body#portfolio ul#portfolioItems li img {
+    max-width: 100%;
 }
